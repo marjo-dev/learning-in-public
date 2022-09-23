@@ -70,6 +70,8 @@ chessBoard(20, 8)
 console.log('~~~~~~~3.1 MINIMUM~~~~~~~');
 function min(a, b) {
     //easy version using a built in method: return Math.min(a,b)
+    console.log(`min of (${a}, ${b})`);
     return a > b ? b : a;
 }
-console.log(min(0, 10), min(0, -10)); //test cases
+console.log(min(0, 10));
+console.log(min(0, -10)); //test cases
