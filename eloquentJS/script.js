@@ -8,7 +8,7 @@
 // #####
 // ######
 // #######
-console.log('~~~~~~~TRIANGLE LOOP~~~~~~~');
+console.log('~~~~~~~2.1 TRIANGLE LOOP~~~~~~~');
 let hash = '';
 
 for (let i = 0; i <= 7; i++) {
@@ -20,7 +20,7 @@ for (let i = 0; i <= 7; i++) {
 
 // When you have that working, modify your program to print "FizzBuzz" for numbers that are divisible by both 3 and 5 (and still print "Fizz" or "Buzz" for numbers divisible by only one of those).
 // In the interest of space I just set the count to 30 instead of 100
-console.log('~~~~~~~FIZZBUZZ~~~~~~~');
+console.log('~~~~~~~2.2 FIZZBUZZ~~~~~~~');
 for (let i = 1; i <= 30; i++) {
     if (i % 3 === 0 && i % 5 === 0) console.log('fizzbuzz');
     else if (i % 3 === 0) console.log('fizz');
@@ -45,7 +45,7 @@ for (let i = 1; i <= 30; i++) {
 
 //I made it into a function that takes in the size of the chessboard as arguments
 //maybe make the arguments taken from user input
-console.log('~~~~~~~CHESSBOARD~~~~~~~');
+console.log('~~~~~~~2.3 CHESSBOARD~~~~~~~');
 const chessBoard = (xSize, ySize) => {
     let printThis = '';
     for (let y = 0; y < ySize; y++) { //building on the vertical axis
@@ -61,3 +61,15 @@ const chessBoard = (xSize, ySize) => {
     console.log(printThis);
 }
 chessBoard(20, 8)
+
+//Minimum
+// Write a function min that takes two arguments and returns their minimum.
+// console.log(min(0, 10));
+// // → 0
+// console.log(min(0, -10));
+console.log('~~~~~~~3.1 MINIMUM~~~~~~~');
+function min(a, b) {
+    //easy version using a built in method: return Math.min(a,b)
+    return a > b ? b : a;
+}
+console.log(min(0, 10), min(0, -10)); //test cases
