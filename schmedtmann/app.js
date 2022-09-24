@@ -260,36 +260,6 @@ const printForecast = function (arr) {
 
 printForecast(temp1);
 printForecast(temp2);
-/*
-function century(year) {
-    if (year <= 100) return 1;
-    if (100 < year && year <= 200) return 2;
-    if (200 < year && year <= 300) return 3;
-    if (300 < year && year <= 400) return 4;
-    if (400 < year && year <= 500) return 5;
-    if (500 < year && year <= 600) return 6;
-    if (600 < year && year <= 700) return 7;
-    if (700 < year && year <= 800) return 8;
-    if (800 < year && year <= 900) return 9;
-    if (900 < year && year <= 1000) return 10;
-    if (1000 < year && year <= 1100) return 11;
-    if (1100 < year && year <= 1200) return 12;
-    if (1200 < year && year <= 1300) return 13;
-    if (1300 < year && year <= 1400) return 14;
-    if (1400 < year && year <= 1500) return 15;
-    if (1500 < year && year <= 1600) return 16;
-    if (1600 < year && year <= 1700) return 17;
-    if (1700 < year && year <= 1800) return 18;
-    if (1800 < year && year <= 1900) return 19;
-    if (1900 < year && year <= 2000) return 20;
-    if (2000 < year && year <= 2100) return 21;
-}
-
-console.log(century(1705)); 
-*/
-
-
-//The first century spans from the year 1 up to and including the year 100, the second century - from the year 101 up to and including the year 200, etc.
 
 function century(year) {
     return Math.ceil(year * .01)
