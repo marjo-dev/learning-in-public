@@ -10,7 +10,7 @@
 // ["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
 // Note: For 4 or more names, the number in "and 2 others" simply increases.
 
-//I used a simple if... else statement for this. plan to refactor using switch statements or a spread operator later
+//using a simple if... else statement:
 function likes(arr) {
   if (arr.length === 0) {
     return 'no one likes this';
@@ -24,8 +24,8 @@ function likes(arr) {
     return `${arr[0]}, ${arr[1]} and ${arr.length - 2} others like this`;
   }
 }
-
-function likeThis(arr) {
+//refactored using switch case:
+function likeThis(...arr) {
   switch (arr.length) {
     case 0: return `no one likes this`; break;
     case 1: return `${arr[0]} likes this`; break;
@@ -34,7 +34,17 @@ function likeThis(arr) {
     default: return `${arr[0]}, ${arr[1]} and ${arr.length - 2} others like this`; break;
   }
 }
+//refactored using the rest params syntax:
+function like(names) {
+  let [a, b, c, ...others] = names;
+  if (names.length === 0) return 'no one likes this';
+  if (names.length === 1) return `${a} likes this`;
+  if (names.length === 2) return `${a} and ${b} like this`;
+  if (names.length === 3) return `${a}, ${b} and ${c} like this`;
+  if (names.length > 3) return `${a}, ${b} and ${others.length + 1} others like this`;
+}
 
 //testing:
 console.log(likes(['socks', 'mittens', 'chippy', 'seamus', 'perdy']));
-console.log(likeThis(['patches', 'ripley', 'junior']));
+console.log(likeThis('patches', 'ripley', 'roddy', 'junior'));
+console.log(like(['chippy', 'seamus', 'perdy']));
