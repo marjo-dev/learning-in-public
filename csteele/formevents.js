@@ -19,7 +19,7 @@ petsForm.addEventListener('submit', function (e) {
     e.preventDefault();
     const petName = input.value;
     const newLI = document.createElement('li');
-    newLI.innerText = petName;
+    newLI.innerText = petName + ' 🐾 ';
     petList.append(newLI);
     console.log('SUBMITTED THE FORM!', input.value);
     input.value = '';

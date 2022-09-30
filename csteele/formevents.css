@@ -1,0 +1,15 @@
+* {
+  background-color: rgb(248, 229, 203);
+}
+
+.forms {
+  display: flex;
+}
+
+div div {
+  flex: 1;
+}
+
+#pets li {
+  display: inline;
+}
