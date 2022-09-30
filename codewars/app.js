@@ -34,7 +34,7 @@ function likeThis(...arr) {
     default: return `${arr[0]}, ${arr[1]} and ${arr.length - 2} others like this`; break;
   }
 }
-//refactored using the rest params syntax:
+//refactored by destructuring the array:
 function like(names) {
   let [a, b, c, ...others] = names;
   if (names.length === 0) return 'no one likes this';
@@ -45,6 +45,6 @@ function like(names) {
 }
 
 //testing:
-console.log(likes(['socks', 'mittens', 'chippy', 'seamus', 'perdy']));
-console.log(likeThis('patches', 'ripley', 'roddy', 'junior'));
-console.log(like(['chippy', 'seamus', 'perdy']));
+console.log(likes(['socks', 'mittens']));
+console.log(likeThis('patches', 'ripley', 'roddy'));
+console.log(like(['chippy', 'seamus', 'perdy', 'ten', 'junior']));
