@@ -48,3 +48,23 @@ function like(names) {
 console.log(likes(['socks', 'mittens']));
 console.log(likeThis('patches', 'ripley', 'roddy'));
 console.log(like(['chippy', 'seamus', 'perdy', 'ten', 'junior']));
+
+
+// codewars 10/04
+// Are they the "same"? (fundamentals)
+// Given two arrays a and b write a function comp(a, b) that checks whether the two arrays have the "same" elements, with the same multiplicities (the multiplicity of a member is the number of times it appears). "Same" means, here, that the elements in b are the elements in a squared, regardless of the order.
+
+function comp(arr1, arr2) {
+  let squares = 0;
+  if (arr1 === null || arr2 === null) return false;
+  if (arr1.length === arr2.length) {
+    arr1.sort(function compareNums(a, b) { return a - b });
+    arr2.sort(function compareNums(a, b) { return a - b });
+    for (let i = 0; i < arr1.length; i++) {
+      if (arr2[i] === arr1[i] ** 2) squares++;
+    } return squares === arr1.length ? true : false;
+  } else return false;
+}
+
+
+console.log(comp([1, 2, 3, 4], null));
