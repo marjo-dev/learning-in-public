@@ -61,10 +61,11 @@ function comp(arr1, arr2) {
     arr1.sort(function compareNums(a, b) { return a - b });
     arr2.sort(function compareNums(a, b) { return a - b });
     for (let i = 0; i < arr1.length; i++) {
-      if (arr2[i] === arr1[i] ** 2) squares++;
+      if (arr1[i] ** 2 === arr2[i]) squares++;
     } return squares === arr1.length ? true : false;
   } else return false;
 }
 
-
+console.log(comp([1, 2, 3, 4], [1, 16, 4, 9]));
+console.log(comp([1, 2, 3, 4], [1, 16, 9]));
 console.log(comp([1, 2, 3, 4], null));
