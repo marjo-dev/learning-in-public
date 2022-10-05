@@ -10,29 +10,13 @@
 // ["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
 // Note: For 4 or more names, the number in "and 2 others" simply increases.
 
-//using a simple if... else statement:
+//using a simple if statement:
 function likes(arr) {
-  if (arr.length === 0) {
-    return 'no one likes this';
-  } else if (arr.length === 1) {
-    return `${arr[0]} likes this`;
-  } else if (arr.length === 2) {
-    return `${arr[0]} and ${arr[1]} like this`;
-  } else if (arr.length === 3) {
-    return `${arr[0]}, ${arr[1]} and ${arr[2]} like this`;
-  } else if (arr.length > 3) {
-    return `${arr[0]}, ${arr[1]} and ${arr.length - 2} others like this`;
-  }
-}
-//refactored using switch case:
-function likeThis(...arr) {
-  switch (arr.length) {
-    case 0: return `no one likes this`; break;
-    case 1: return `${arr[0]} likes this`; break;
-    case 2: return `${arr[0]} and ${arr[1]} like this`; break;
-    case 3: return `${arr[0]}, ${arr[1]} and ${arr[2]} like this`; break;
-    default: return `${arr[0]}, ${arr[1]} and ${arr.length - 2} others like this`; break;
-  }
+  if (arr.length === 0) return 'no one likes this';
+  if (arr.length === 1) return `${arr[0]} likes this`;
+  if (arr.length === 2) return `${arr[0]} and ${arr[1]} like this`;
+  if (arr.length === 3) return `${arr[0]}, ${arr[1]} and ${arr[2]} like this`;
+  if (arr.length > 3) return `${arr[0]}, ${arr[1]} and ${arr.length - 2} others like this`;
 }
 //refactored by destructuring the array:
 function like(names) {
@@ -43,11 +27,20 @@ function like(names) {
   if (names.length === 3) return `${a}, ${b} and ${c} like this`;
   if (names.length > 3) return `${a}, ${b} and ${others.length + 1} others like this`;
 }
-
+//refactored with using rest parameters and switch case:
+function likeThis(...arr) {
+  switch (arr.length) {
+    case 0: return `no one likes this`; break;
+    case 1: return `${arr[0]} likes this`; break;
+    case 2: return `${arr[0]} and ${arr[1]} like this`; break;
+    case 3: return `${arr[0]}, ${arr[1]} and ${arr[2]} like this`; break;
+    default: return `${arr[0]}, ${arr[1]} and ${arr.length - 2} others like this`; break;
+  }
+}
 //testing:
 console.log(likes(['socks', 'mittens']));
-console.log(likeThis('patches', 'ripley', 'roddy'));
 console.log(like(['chippy', 'seamus', 'perdy', 'ten', 'junior']));
+console.log(likeThis('patches', 'ripley', 'roddy'));
 
 
 // codewars 10/04
@@ -65,7 +58,7 @@ function comp(arr1, arr2) {
     } return squares === arr1.length ? true : false;
   } else return false;
 }
-
+// testing:
 console.log(comp([1, 2, 3, 4], [1, 16, 4, 9]));
 console.log(comp([1, 2, 3, 4], [1, 16, 9]));
 console.log(comp([1, 2, 3, 4], null));
