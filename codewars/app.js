@@ -44,7 +44,7 @@ console.log(likeThis('patches', 'ripley', 'roddy'));
 
 
 // codewars 10/04
-// Are they the "same"? (fundamentals)
+// Are they the "same"? (6 kyu: fundamentals)
 // Given two arrays a and b write a function comp(a, b) that checks whether the two arrays have the "same" elements, with the same multiplicities (the multiplicity of a member is the number of times it appears). "Same" means, here, that the elements in b are the elements in a squared, regardless of the order.
 
 function comp(arr1, arr2) {
@@ -62,3 +62,25 @@ function comp(arr1, arr2) {
 console.log(comp([1, 2, 3, 4], [1, 16, 4, 9]));
 console.log(comp([1, 2, 3, 4], [1, 16, 9]));
 console.log(comp([1, 2, 3, 4], null));
+
+
+// codewars 10/05
+// Count by X (8 kyu: arrays, fundamentals)
+// Create a function with two arguments that will return an array of the first n multiples of x. Assume both the given number and the number of times to count will be positive numbers greater than 0.
+
+// Return the results as an array or list ( depending on language ).
+
+// Examples
+//   countBy(1,10) === [1,2,3,4,5,6,7,8,9,10]
+//   countBy(2,5) === [2,4,6,8,10]
+
+function countBy(n, x) {
+  let arr = [n];
+  for (let i = 0; i < x; i++) {
+    arr.push(arr[i] + n);
+  } arr.pop();
+  return arr;
+}
+// }
+countBy(2, 5)
+countBy(1, 10)
