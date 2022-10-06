@@ -81,6 +81,28 @@ function countBy(n, x) {
   } arr.pop();
   return arr;
 }
-// }
+// testing:
 countBy(2, 5)
 countBy(1, 10)
+
+
+// codewars 10/06
+// Number of people in bus (7 kyu: findamentals)
+// You are provided with a list (or array) of integer pairs. Elements of each pair represent number of people get into bus (The first item) and number of people get off the bus (The second item) in a bus stop.
+
+// Your task is to return number of people who are still in the bus after the last bus station (after the last array). Please keep in mind that the test cases ensure that the number of people in the bus is always >= 0. So the return integer can't be negative.
+
+// The second value in the first integer array is 0, since the bus is empty in the first bus stop.
+
+const number = function (busStops) {
+  let finalOn = 0, finalOff = 0;
+  for (let i = 0; i < busStops.length; i++) {
+    finalOn += busStops[i][0];
+    finalOff += busStops[i][1];
+  }
+  //console.log(finalOn, finalOff);
+  return finalOn - finalOff;
+}
+// testing:
+console.log(number([[10, 0], [3, 5], [5, 8]]));
+console.log(number([[0, 0]]));
