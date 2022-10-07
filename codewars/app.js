@@ -49,6 +49,7 @@ console.log(likeThis('patches', 'ripley', 'roddy'));
 
 function comp(arr1, arr2) {
   let squares = 0;
+  console.log(`are [${arr2}] squares of [${arr1}]?`);
   if (arr1 === null || arr2 === null) return false;
   if (arr1.length === arr2.length) {
     arr1.sort(function compareNums(a, b) { return a - b });
@@ -79,15 +80,16 @@ function countBy(n, x) {
   for (let i = 0; i < x; i++) {
     arr.push(arr[i] + n);
   } arr.pop();
+  console.log(`count by ${n} * ${x} times`);
   return arr;
 }
 // testing:
-countBy(2, 5)
-countBy(1, 10)
+console.log(countBy(2, 5));
+console.log(countBy(1, 10));
 
 
 // codewars 10/06
-// Number of people in bus (7 kyu: findamentals)
+// Number of people in bus (7 kyu: fundamentals)
 // You are provided with a list (or array) of integer pairs. Elements of each pair represent number of people get into bus (The first item) and number of people get off the bus (The second item) in a bus stop.
 
 // Your task is to return number of people who are still in the bus after the last bus station (after the last array). Please keep in mind that the test cases ensure that the number of people in the bus is always >= 0. So the return integer can't be negative.
@@ -101,8 +103,34 @@ const number = function (busStops) {
     finalOff += busStops[i][1];
   }
   //console.log(finalOn, finalOff);
+  console.log('number of people in bus:');
   return finalOn - finalOff;
 }
 // testing:
 console.log(number([[10, 0], [3, 5], [5, 8]]));
 console.log(number([[0, 0]]));
+
+
+// codewars 10/07
+// Build Tower (6 kyu: strings, fundamentals)
+
+// Build a pyramid-shaped tower, as an array/list of strings, given a positive integer number of floors. A tower block is represented with "*" character.
+// For example, a tower with 3 floors looks like this:
+// [
+//   "  *  ",
+//   " *** ", 
+//   "*****"
+// ]
+
+function buildTower(floor) {
+  let tower = []
+  for (let i = 0; i < floor; i++) {
+    tower.push(' '.repeat(floor - i - 1)
+      + '*'.repeat(i * 2 + 1)
+      + ' '.repeat(floor - i - 1));
+  } console.log(tower.join('\r\n')); // returns as a string
+  return tower;
+}
+// testing:
+console.log(buildTower(5))
+// Note: I had trouble with the kata interpretation. The kata test required the returned result to deeply equal an array type, however I kept returning it as a string from the constructed array using the .join('\r\n') method, in order to present the result visually similar to the kata requirement.
