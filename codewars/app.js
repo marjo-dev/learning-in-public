@@ -134,3 +134,40 @@ function buildTower(floor) {
 // testing:
 console.log(buildTower(5))
 // Note: I had trouble with the kata interpretation. The kata test required the returned result to deeply equal an array type, however I kept returning it as a string from the constructed array using the .join('\r\n') method, in order to present the result visually similar to the kata requirement.
+
+
+// codewars 10/07
+// Switch it up (8 kyu: fundamentals)
+// When provided with a number between 0-9, return it in words.
+// Input :: 1
+// Output :: "One".
+// If your language supports it, try using a switch statement.
+
+function switchItUp(num) {
+  console.log(`switch ${num} up`);
+  switch (num) {
+    case 0: return 'Zero';
+      break;
+    case 1: return 'One';
+      break;
+    case 2: return 'Two';
+      break;
+    case 3: return 'Three';
+      break;
+    case 4: return 'Four';
+      break;
+    case 5: return 'Five';
+      break;
+    case 6: return 'Six';
+      break;
+    case 7: return 'Seven';
+      break;
+    case 8: return 'Eight';
+      break;
+    case 9: return 'Nine';
+      break;
+  }
+}
+// testing:
+console.log(switchItUp(5));
+console.log(switchItUp(7));
