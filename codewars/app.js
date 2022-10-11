@@ -1,8 +1,7 @@
+console.log('~~~~~ codewars 9/26: Who likes it? (6 kyu: strings, fundamentals) ~~~~~ ');
 // codewars 9/26
 // Who likes it? (6 kyu: strings, fundamentals) 
-
 // Implement the function which takes an array containing the names of people that like an item. It must return the display text as shown in the examples:
-
 // []                                -->  "no one likes this"
 // ["Peter"]                         -->  "Peter likes this"
 // ["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
@@ -43,6 +42,7 @@ console.log(like(['chippy', 'seamus', 'perdy', 'ten', 'junior']));
 console.log(likeThis('patches', 'ripley', 'roddy'));
 
 
+console.log('~~~~~ codewars 10/04: Are they the "same"? (6 kyu: fundamentals) ~~~~~ ');
 // codewars 10/04
 // Are they the "same"? (6 kyu: fundamentals)
 // Given two arrays a and b write a function comp(a, b) that checks whether the two arrays have the "same" elements, with the same multiplicities (the multiplicity of a member is the number of times it appears). "Same" means, here, that the elements in b are the elements in a squared, regardless of the order.
@@ -65,6 +65,7 @@ console.log(comp([1, 2, 3, 4], [1, 16, 9]));
 console.log(comp([1, 2, 3, 4], null));
 
 
+console.log('~~~~~ codewars 10/05: Count by X (8 kyu: arrays, fundamentals) ~~~~~ ');
 // codewars 10/05
 // Count by X (8 kyu: arrays, fundamentals)
 // Create a function with two arguments that will return an array of the first n multiples of x. Assume both the given number and the number of times to count will be positive numbers greater than 0.
@@ -88,6 +89,7 @@ console.log(countBy(2, 5));
 console.log(countBy(1, 10));
 
 
+console.log('~~~~~ codewars 10/06: Number of people in bus (7 kyu: fundamentals) ~~~~~ ');
 // codewars 10/06
 // Number of people in bus (7 kyu: fundamentals)
 // You are provided with a list (or array) of integer pairs. Elements of each pair represent number of people get into bus (The first item) and number of people get off the bus (The second item) in a bus stop.
@@ -111,9 +113,9 @@ console.log(number([[10, 0], [3, 5], [5, 8]]));
 console.log(number([[0, 0]]));
 
 
+console.log('~~~~~ codewars 10/07: Build Tower (6 kyu: strings, fundamentals) ~~~~~ ');
 // codewars 10/07
 // Build Tower (6 kyu: strings, fundamentals)
-
 // Build a pyramid-shaped tower, as an array/list of strings, given a positive integer number of floors. A tower block is represented with "*" character.
 // For example, a tower with 3 floors looks like this:
 // [
@@ -121,7 +123,6 @@ console.log(number([[0, 0]]));
 //   " *** ", 
 //   "*****"
 // ]
-
 function buildTower(floor) {
   let tower = []
   for (let i = 0; i < floor; i++) {
@@ -136,6 +137,7 @@ console.log(buildTower(5))
 // Note: I had trouble with the kata interpretation. The kata test required the returned result to deeply equal an array type, however I kept returning it as a string from the constructed array using the .join('\r\n') method, in order to present the result visually similar to the kata requirement.
 
 
+console.log('~~~~~ codewars 10/07: Switch it up (8 kyu: fundamentals) ~~~~~ ');
 // codewars 10/07
 // Switch it up (8 kyu: fundamentals)
 // When provided with a number between 0-9, return it in words.
@@ -171,3 +173,33 @@ function switchItUp(num) {
 // testing:
 console.log(switchItUp(5));
 console.log(switchItUp(7));
+
+
+console.log('~~~~~ codewars 10/10: Unique In Order (6 kyu: algorithms, fundamentals) ~~~~~ ');
+// codewars 10/10
+// Unique In Order (6 kyu: algorithms, fundamentals)
+// Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
+// For example:
+// uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
+// uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
+// uniqueInOrder([1,2,2,3,3])       == [1,2,3]
+
+// some failed attempts for posterity's sake: 
+// for (let j = i + 1; j < input.length; j++) {
+//   if (input[j] === input[i]) {
+//     continue;
+//   }
+//   else {
+//     arr.push[input[j]]
+//   }
+// } 
+function uniqueInOrder(input) {
+  let output = [];
+  for (let i = 0; i < input.length; i++) {
+    if (input[i + 1] != input[i]) output.push(input[i]);
+  } return output;
+}
+// testing: 
+console.log(uniqueInOrder('AAAABBBCCDAABBB'));
+console.log(uniqueInOrder('ABBCcAD'));
+console.log(uniqueInOrder([1, 2, 2, 3, 3]));
